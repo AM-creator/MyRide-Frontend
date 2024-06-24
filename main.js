@@ -28,10 +28,12 @@ function loadAnimation() {
 
 // dropdown menu
 document.addEventListener("DOMContentLoaded", function () {
-  const dropdownIcon = document.querySelector("header i");
-  const dropdownContent = document.querySelector(".dropdown-menu");
+  var dropdownIcon = document.querySelector("header .dropdown-icon");
+  var dropdownMenu = document.querySelector("header .dropdown-menu");
 
   dropdownIcon.addEventListener("click", function () {
-    dropdownContent.classList.toggle("show");
+    // This will toggle the dropdown display on click
+    dropdownMenu.style.display =
+      dropdownMenu.style.display === "block" ? "none" : "block";
   });
 });

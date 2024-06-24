@@ -163,6 +163,9 @@ header i:hover {
   height: 100%;
   display: block;
 }
+.dropdown-menu {
+  display: none;
+}
 
 @media (max-width: 1200px) {
   :root {
@@ -178,7 +181,7 @@ header i:hover {
   header nav {
     display: none !important;
   }
-  /* Adjust the layout to accommodate the background below */
+
   .content {
     flex-direction: column;
     align-items: center;
@@ -205,10 +208,10 @@ header i:hover {
     height: auto;
     flex: 0 0 auto;
     overflow: hidden;
-    margin-top: auto;
     position: relative;
-    top: 20%;
+    top: 0;
     left: 45%;
+    margin-top: 20%;
   }
 
   .background svg {
