@@ -163,9 +163,6 @@ header i:hover {
   height: 100%;
   display: block;
 }
-.dropdown-menu {
-  display: none;
-}
 
 @media (max-width: 1200px) {
   :root {
@@ -174,12 +171,39 @@ header i:hover {
 }
 
 @media (max-width: 768px) {
+  header {
+    position: relative;
+    z-index: 1000;
+  }
   header i {
     display: block !important;
+    cursor: pointer;
   }
 
   header nav {
-    display: none !important;
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: -100px; /* Start off-screen */
+    height: auto;
+    min-width: 10px;
+    width: auto;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    transition: right 0.3s ease-in-out;
+    z-index: 2 !important;
+  }
+
+  header nav.show {
+    display: flex !important;
+    right: 15px; /* Slide in from right */
+  }
+
+  header nav a {
+    margin: 0.5rem 0;
   }
 
   .content {

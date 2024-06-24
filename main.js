@@ -27,13 +27,17 @@ function loadAnimation() {
 }
 
 // dropdown menu
-document.addEventListener("DOMContentLoaded", function () {
-  var dropdownIcon = document.querySelector("header .dropdown-icon");
-  var dropdownMenu = document.querySelector("header .dropdown-menu");
+const dropdownIcon = document.querySelector(".dropdown-icon");
+const nav = document.querySelector("nav");
 
-  dropdownIcon.addEventListener("click", function () {
-    // This will toggle the dropdown display on click
-    dropdownMenu.style.display =
-      dropdownMenu.style.display === "block" ? "none" : "block";
-  });
+dropdownIcon.addEventListener("click", (e) => {
+  e.stopPropagation();
+  nav.classList.toggle("show");
+});
+
+// Close the nav when clicking outside of it
+document.addEventListener("click", (e) => {
+  if (!nav.contains(e.target) && !dropdownIcon.contains(e.target)) {
+    nav.classList.remove("show");
+  }
 });
