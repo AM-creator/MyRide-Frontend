@@ -154,7 +154,7 @@ header i:hover {
   width: 50%;
   height: auto;
   transform: translate(-50%, -50%);
-  overflow: visible;
+  overflow: hidden;
 }
 
 .background svg {
@@ -179,6 +179,8 @@ header i:hover {
   }
 
   .background {
+    display: flex;
+    flex-direction: row;
     position: relative;
     top: 6%;
     bottom: 0;
