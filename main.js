@@ -1,5 +1,6 @@
 import "./style.css";
 import gsap from "gsap";
+import {car} from "./car.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   loadAnimation();
@@ -24,6 +25,14 @@ function loadAnimation() {
 
   // aside animation
   tween.from(".info", { duration: 0.3, ease: "power2", opacity: 0, y: 40 });
+
+  // start car animation
+  tween.call(carAnimation);
+}
+
+// car animation
+function carAnimation() {
+  car.play();
 }
 
 // dropdown menu
